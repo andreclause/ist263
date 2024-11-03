@@ -2,13 +2,87 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>
+        Andres Clause
 
+    </title>
+    <style>
+        header {color: white;}
+        h1 { text-align: center;
+            font-family: Arial, sans-serif;}
+        body{margin: 0;}
+        header {
+            margin: 0;
+            padding: 0;
+            width: 100;
+        }
+        .topnav{
+            background-color: dodgerblue;
+            overflow: auto;
+            width: 120;
+
+        }
+        .topnav a {
+            float:left;
+            color: azure;
+            text-align: center;
+            padding: 5px;
+            text-decoration: none;
+            font-size: 20;
+        }
+        p{
+            max-width: 600px;
+            min-width: 100px;
+        }
+        .flex-container{
+            display: flex;
+            flex-wrap: wrap;
+            flex-flow: row wrap;
+            flex-direction: row;
+            justify-content: center;
+            align-content: space-between;
+            
+        }
+        .Other-skills {
+            background-color: rgb(8, 8, 92);
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+    </style>
 
 </head>
+<body>
+    <header>
+        <div class="topnav">
+            <a href="#">Home |</a>
+            <a href="#">Skills |</a>
+            <a href="#">Contact |</a>
+        </div>
+    </header>
+    <h1> Technical Skills</h1>
+    <div class="container">
 
-    <body>
-        
-    </body>
+    </div>
+    <p style="padding-left:20px;">Over the past Few years in University I had the oppportunity to work with incredible profeessors 
+        who have helped gift me with experience using a variety of tools. Below are my core skills.</p>
+
+    <div class="flex-container">
+        <div><img src = "../images/code-solid.svg" alt="HTML" width="50" height = "50" ></div>
+        <div><img src ="../images/file-code-solid.svg" alt="CSS" width="50" height = "50"></div>
+        <div><img src="../images/file-excel-solid (1).svg" alt="Excek" width="50" height = "50"></div>
+        <div><img src="../images/python-brands-solid.svg" alt="Python" width="50" height = "50"></div>
+        <div><img src="../images/r-solid.svg" alt="R Studio" width="50" height = "50"></div>
+        <div class="Other-skills" style="color: white; font-family: Arial, Helvetica, sans-serif;">
+            <p>Other Skills:<br><br>
+                Windows 10<br>
+                Microsoft Word<br>
+                SQL 
+            </p>
+
+        </div>
+    </div>
+ </body>
 
 
 </html>
