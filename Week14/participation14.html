@@ -9,6 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modal</title>
     <style>
+        .modal-content{
+            
+        }
         .new-amsterdam-regular {
         font-family: "New Amsterdam", sans-serif;
         font-weight: 400;
@@ -16,14 +19,26 @@
         }
         .container {width: 800px; margin: 0 auto;}
         .button {
+
             background-color: lightblue;
             cursor: pointer;
             padding: 5px;
         }
         /* write CSS to position our information and hide it when the page loads here */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+            }
+        
     </style>
     <script>
         /* add code to open and close our information modal */
+        btn.onclick = function() {
+            modal.style.display = "block";
+            }
     </script>
 </head>
 <body class="new-amsterdam-regular">
@@ -38,7 +53,19 @@
         
         <p>Muffin pastry cupcake cheesecake icing lollipop. Jelly beans tootsie roll tootsie roll toffee gummi bears chocolate bar. Tart cake donut fruitcake oat cake sesame snaps jelly cookie icing. Jelly liquorice pudding biscuit cookie sweet roll tootsie roll dessert lollipop.</p>
         <p><a class="button">Get More Information</a></p>
-         <p>test text</p>
+        <button id="myBtn">Open Modal</button>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+        
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Deserts are Delicious</p>
+            <img src="../images/cupcakes.jpg">
+          </div>
+        
+        </div>
     </div>
 </body>
 </html>
