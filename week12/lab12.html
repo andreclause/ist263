@@ -14,95 +14,132 @@
              width: 1200px;
              margin: auto;     
          }
-         #bigimages {margin-right: 100px;}
-         #planetinfo {padding: 100px;}
-         #thumbnails {width: 840px; margin: auto; padding-top: 20px;} 
-         #mercurythumb, #venusthumb, #earththumb, #marsthumb, #jupiterthumb, #saturnthumb, #uranusthumb, #neptunethumb 
-         {width: 100px;}
-        #venus, #venusText, #earth, #earthText, #mars, #marsText, #jupiter, #jupiterText, #saturn, #saturnText, #uranus, #uranusText, #neptune, #neptuneText {
-        display: none;
+         #bigimages {
+            margin-right: 100px;
         }
-        #planetInfo img {
-        float: left;
-        width: 300px;
-        margin-right: 20px;
+         #planetinfo {
+            padding: 100px;
         }
-        #planetInfo div {
-        float: left;
-        width: 300px;
-        }
-        .thumbnails img {
-        width: 80px;
-        margin: 5px;
-        cursor: pointer;
+         #thumbnails {
+            width: 840px; margin: auto; padding-top: 20px;
+        } 
+
+        #venus, #venusinfo, #earth, #earthinfo, #mars, #marsinfo, #jupiter, #jupiterinfo, #saturn, #saturninfo, #uranus, #uranusinfo, #neptune, #neptuneinfo {
+            display: none;
         }
 
-        #planetInfo::after {
-        content: "";
-        display: block;
-        clear: both;
+        #slideshow-container {
+            width: 90%;
+            margin: auto;
+            font-family: Arial, sans-serif;
+        }
+
+        #bigimages img {
+            width: 300px;
+            float: left;
+            margin-right: 20px;
+        }
+
+        #planetinfo {
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        #planetinfo > div {
+            float: left;
+            width: calc(100% - 320px); 
+        }
+        #thumbnails {
+            clear: both;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #thumbnails img {
+            width: 80px;
+            height: 80px;
+            margin: 5px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border 0.3s;
+        }
+
+        #thumbnails img:hover {
+            border: 2px solid #666;
         }
 
      </style>
      <script>
-        function PlanetsOff() {
-            document.getElementById("mercury").style.display = "none";
-            document.getElementById("venus").style.display = "none";
-            document.getElementById("earth").style.display = "none";
-            document.getElementById("mars").style.display = "none";
-            document.getElementById("jupiter").style.display = "none";
-            document.getElementById("saturn").style.display = "none";
-            document.getElementById("uranus").style.display = "none";
-            document.getElementById("neptune").style.display = "none";
-            document.getElementById("mercuryText").style.display = "none";
-            document.getElementById("venusText").style.display = "none";
-            document.getElementById("earthText").style.display = "none";
-            document.getElementById("marsText").style.display = "none";
-            document.getElementById("jupiterText").style.display = "none";
-            document.getElementById("saturnText").style.display = "none";
-            document.getElementById("uranusText").style.display = "none";
-            document.getElementById("neptuneText").style.display = "none";
+    function PlanetsOff() {
+        const planets = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"];
+        for (let i = 0; i < planets.length; i++) {
+            document.getElementById(planets[i]).style.display = "none";
+            document.getElementById(planets[i] + "info").style.display = "none";
         }
-        function showMercury() {
-            document.getElementById("mercury").style.display = "block";
-            document.getElementById("mercuryText").style.display = "block";
-        }
+}
 
-        function showVenus() {
-            document.getElementById("venus").style.display = "block";
-            document.getElementById("venusText").style.display = "block";
-        }
+    function showMercury() {
+        document.getElementById("mercury").style.display = "block";
+        document.getElementById("mercuryinfo").style.display = "block";
+    }
+    function showVenus() {
+        document.getElementById("venus").style.display = "block";
+        document.getElementById("venusinfo").style.display = "block";
+    }
+    function showEarth() {
+        document.getElementById("earth").style.display = "block";
+        document.getElementById("earthinfo").style.display = "block";
+    }
+    function showMars() {
+        document.getElementById("mars").style.display = "block";
+        document.getElementById("marsinfo").style.display = "block";
+    }
+    function showJupiter() {
+        document.getElementById("jupiter").style.display = "block";
+        document.getElementById("jupiterinfo").style.display = "block";
+    }
+    function showSaturn() {
+        document.getElementById("saturn").style.display = "block";
+        document.getElementById("saturninfo").style.display = "block";
+    }
+    function showUranus() {
+        document.getElementById("uranus").style.display = "block";
+        document.getElementById("uranusinfo").style.display = "block";
+    }
+    function showNeptune() {
+        document.getElementById("neptune").style.display = "block";
+        document.getElementById("neptuneinfo").style.display = "block";
+    }
 
-        function showEarth() {
-            document.getElementById("earth").style.display = "block";
-            document.getElementById("earthText").style.display = "block";
-        }
+    window.onload = function() {
+        PlanetsOff(); 
+        showMercury(); 
 
-        function showMars() {
-            document.getElementById("mars").style.display = "block";
-            document.getElementById("marsText").style.display = "block";
-        }
-
-        function showJupiter() {
-            document.getElementById("jupiter").style.display = "block";
-            document.getElementById("jupiterText").style.display = "block";
-        }
-
-        function showSaturn() {
-            document.getElementById("saturn").style.display = "block";
-            document.getElementById("saturnText").style.display = "block";
-        }
-
-        function showUranus() {
-            document.getElementById("uranus").style.display = "block";
-            document.getElementById("uranusText").style.display = "block";
-        }
-
-        function showNeptune() {
-            document.getElementById("neptune").style.display = "block";
-            document.getElementById("neptuneText").style.display = "block";
-        }
-
+        document.getElementById("mercurythumb").onclick = function() {
+            PlanetsOff(); showMercury();
+        };
+        document.getElementById("venusthumb").onclick = function() {
+            PlanetsOff(); showVenus();
+        };
+        document.getElementById("earththumb").onclick = function() {
+            PlanetsOff(); showEarth();
+        };
+        document.getElementById("marsthumb").onclick = function() {
+            PlanetsOff(); showMars();
+        };
+        document.getElementById("jupiterthumb").onclick = function() {
+            PlanetsOff(); showJupiter();
+        };
+        document.getElementById("saturnthumb").onclick = function() {
+            PlanetsOff(); showSaturn();
+        };
+        document.getElementById("uranusthumb").onclick = function() {
+            PlanetsOff(); showUranus();
+        };
+        document.getElementById("neptunethumb").onclick = function() {
+            PlanetsOff(); showNeptune();
+        };
+    };
      </script>
  </head>
  <body>
