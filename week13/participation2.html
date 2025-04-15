@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 11 Partic</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 1em;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 1em;
+      box-sizing: border-box;
+    }
+
+    h1, h2, p {
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    #icon {
+      width: 80px;
+      height: 80px;
+    }
+
+    .section {
+      margin-top: 1.5em;
+    }
+  </style>
+  <script>
+    const cuseTempAPI = "https://api.weather.gov/gridpoints/BGM/52,99/forecast";
+
+    function getSyracuseTemp() {
+      fetch(cuseTempAPI)
+        .then((response) => {
+          if (!response.ok) throw new Error("Network response was not ok");
+          return response.json();
+        })
+        .then((data) => {
+          const period = data.properties.periods[0];
+          document.getElementById("icon").src = period.icon;
+          document.getElementById("time").textContent = new Date(period.startTime).toLocaleString();
+          document.getElementById("temp").textContent = period.temperature + "°F";
+          document.getElementById("forecast").textContent = period.detailedForecast;
+        })
+        .catch((error) => console.error("Error:", error));
+    }
+
+    const friend = ["Andre", "Adrian", "Angel"];
+    const foe = ["rabid fox", "angry squirrel", "angry cat"];
+
+    function determineFriendOrFoe() {
+      const name = document.getElementById("name").value.trim();
+      const responseEl = document.getElementById("response");
+      if (friend.includes(name)) {
+        responseEl.textContent = "They are safe, that is a friend";
+        responseEl.style.color = "green";
+        document.getElementById("image").src = "https://cdn-icons-png.flaticon.com/512/709/709699.png";
+      } else if (foe.includes(name)) {
+        responseEl.textContent = "Watch out, they are shifty!";
+        responseEl.style.color = "red";
+        document.getElementById("image").src = "https://cdn-icons-png.flaticon.com/512/709/709682.png";
+      } else {
+        responseEl.textContent = "Not sure about that one...";
+        responseEl.style.color = "orange";
+        document.getElementById("image").src = "";
+      }
+    }
+
+    function getCurrentDate() {
+      const now = new Date();
+      document.getElementById("date").textContent = now.toLocaleDateString("en-US");
+    }
+  </script>
+</head>
+
+<body>
+  <div class="section">
+    <label for="name">What Do you See?</label>
+    <input type="text" id="name" name="name" />
+    <button onclick="determineFriendOrFoe()">Friend or Foe?</button>
+    <h1 id="response"></h1>
+    <img id="image" src="" />
+  </div>
+
+  <div class="section">
+    <button onclick="getSyracuseTemp()">Get Syracuse Weather</button>
+    <img id="icon" src="" />
+    <p id="time"></p>
+    <p id="temp"></p>
+    <p id="forecast"></p>
+  </div>
+
+  <div class="section">
+    <button onclick="getCurrentDate()">Get Today's Date</button>
+    <p id="date"></p>
+  </div>
+</body>
+</html>

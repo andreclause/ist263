@@ -59,14 +59,19 @@
         const formattedDate = time.toLocaleDateString("en-US"); // MM/DD/YYYY format
         document.getElementById("date").innerHTML = formattedDate;
         console.log(formattedDate);
-
       }
 
     </script>
-    <style></style>
+    <style>
+        .body {
+            max-width: 30px;
+
+        }
+    </style>
   </head>
 
   <body>
+    
     <label for="name">What Do you See? </label>
     <input type="text" id="name" name="name" />
     <button onclick="determineFriendOrFoe()">Friend or Foe?</button>
@@ -86,4 +91,5 @@
     <button onclick="getCurrentDate()">Get Today's Date</button>
     <p id="date"></p>
   </body>
+  
 </html>
