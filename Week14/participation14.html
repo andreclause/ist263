@@ -8,43 +8,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modal</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
     <style>
-        .modal-content{
-            
-        }
         .new-amsterdam-regular {
-        font-family: "New Amsterdam", sans-serif;
-        font-weight: 400;
-        font-style: normal;
+            font-family: "New Amsterdam", sans-serif;
+            font-weight: 400;
+            font-style: normal;
         }
-        .container {width: 800px; margin: 0 auto;}
+        .container {
+            width: 800px;
+            margin: 0 auto;
+        }
         .button {
-
             background-color: lightblue;
             cursor: pointer;
             padding: 5px;
         }
-        /* write CSS to position our information and hide it when the page loads here */
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto; /* 15% from the top and centered */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%; /* Could be more or less, depending on screen size */
-            }
-        
     </style>
-    <script>
-        /* add code to open and close our information modal */
-        btn.onclick = function() {
-            modal.style.display = "block";
-            }
-    </script>
 </head>
 <body class="new-amsterdam-regular">
     <div class="container">
-        <img src="./images/cupcakes.jpg">
+        <img src="./images/cupcakes.jpg" alt="Cupcakes">
         <h1>Desserts</h1>
+
+        <button onclick="document.getElementById('myModal').style.display='block'" class="w3-button w3-black">Open Modal</button>
+
         <p>Tootsie roll icing dessert oat cake lollipop jelly apple pie muffin. Jelly jelly-o bear claw topping muffin pudding oat cake. Carrot cake candy pie jujubes muffin tootsie roll. Brownie topping apple pie cupcake danish chocolate cotton candy gingerbread.</p>
         
         <p>Biscuit oat cake soufflé icing gingerbread cotton candy shortbread cupcake gummi bears. Chocolate cake lollipop biscuit lemon drops jelly tiramisu pie oat cake liquorice. Carrot cake cake cupcake cupcake lollipop sweet roll.</p>
@@ -52,19 +40,18 @@
         <p>Chocolate cake wafer cupcake candy canes carrot cake. Lollipop tart tootsie roll tart jelly-o candy canes candy. Halvah candy jelly-o jujubes toffee.</p>
         
         <p>Muffin pastry cupcake cheesecake icing lollipop. Jelly beans tootsie roll tootsie roll toffee gummi bears chocolate bar. Tart cake donut fruitcake oat cake sesame snaps jelly cookie icing. Jelly liquorice pudding biscuit cookie sweet roll tootsie roll dessert lollipop.</p>
-        <p><a class="button">Get More Information</a></p>
-        <button id="myBtn">Open Modal</button>
 
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-        
-          <!-- Modal content -->
-          <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Deserts are Delicious</p>
-            <img src="../images/cupcakes.jpg">
-          </div>
-        
+        <p><a class="button">Get More Information</a></p>
+
+        <!-- Modal -->
+        <div id="myModal" class="w3-modal">
+            <div class="w3-modal-content w3-animate-top w3-card-4">
+                <div class="w3-container">
+                    <span onclick="document.getElementById('myModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                    <p>Deserts are Delicious</p>
+                    <img src="../images/cupcakes.jpg" alt="Cupcakes">
+                </div>
+            </div>
         </div>
     </div>
 </body>
