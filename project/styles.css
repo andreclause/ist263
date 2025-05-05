@@ -1,223 +1,209 @@
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f9f9f9;
-    color: #333;
-  }
-  
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  header nav a {
-    margin-left: 1rem;
-    text-decoration: none;
-    color: #555;
-  }
-  
-  .hero {
-    text-align: center;
-    padding: 3rem 1rem;
-    background-color: #eee;
-    background-image: image("../");
-  }
-  
-  body {
-    background-image: url("paper.gif");
-    background-color: #cccccc;
-   }
-  .hero h2 {
-    margin-bottom: 1rem;
-  }
-  
-  .hero button {
-    padding: 0.5rem 1rem;
-    background-color: #000;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .section {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 1rem;
-  }
-  
-  .about {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  
-  .about-left {
-    flex: 1 1 25%;
-  }
-  
-  .about-right {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    flex-wrap: nowrap; /* prevent wrapping */
-  }
-  
-  .about-right .image-placeholder {
-    flex: 0 0 150px; /* fixed width for the image box */
-  }
-  
-  .about-right .image-placeholder img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    display: block;
-  }
+  box-sizing: border-box;
+}
 
-  
-  .hobbies {
-    margin-top: 2rem;
-  }
-  
-  .hobby-card {
-    display: flex;
-    flex-direction: row;
-    background-color: #fff;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ddd;
-    gap: 1rem;
-  }
-  
-  .hobby-card .icon {
-    width: 100px;
-    height: 100px;
-    flex-shrink: 0;
-    overflow: hidden;
-    border-radius: 8px; 
-  }
-  
-  .hobby-card .icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    display: block;
-  }
-  
-  footer {
-    background-color: #fff;
-    border-top: 1px solid #ddd;
-    padding: 2rem;
-    margin-top: 3rem;
-  }
-  
-  .footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-  }
-  
-  .footer-grid h5 {
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-  }
-  
-  .footer-grid ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .footer-grid li a {
-    text-decoration: none;
-    color: #555;
-  }
-  .photo-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  
-  .photo-gallery img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-    border: 1px solid #ddd;
-  }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f9f9f9;
+  color: #333;
+  background-image: url("paper.gif");
+  background-color: #cccccc;
+}
 
-  .photo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-  
-  .photo-card {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #ddd;
-    background-color: #fff;
-  }
-  
-  .carousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-  }
-  
-  .carousel img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    flex-shrink: 0;
-    scroll-snap-align: center;
-    transition: transform 0.3s ease;
-  }
-  
-  .carousel img:hover {
-    transform: scale(1.05);
-  }
-  
-  .overlay-text {
-    position: absolute;
-    color: white;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-weight: bold;
-    z-index: 1;
-  }
-  
-  .photo-card.top-left .overlay-text {
-    top: 10px;
-    left: 10px;
-  }
-  
-  .photo-card.top-right .overlay-text {
-    top: 10px;
-    right: 10px;
-  }
-  
-  .photo-card.bottom-left .overlay-text {
-    bottom: 10px;
-    left: 10px;
-  }
-  
-  .photo-card.bottom-right .overlay-text {
-    bottom: 10px;
-    right: 10px;
-  }
-  
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+header nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #555;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #eee;
+}
+
+.hero h2 {
+  margin-bottom: 1rem;
+}
+
+.hero button {
+  padding: 0.5rem 1rem;
+  background-color: #000;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.section {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.about-left {
+  flex: 1 1 25%;
+}
+
+.about-right {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+.about-right .image-placeholder {
+  flex: 0 0 150px;
+}
+
+.about-right .image-placeholder img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.hobbies {
+  margin-top: 2rem;
+}
+
+.hobby-card {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  gap: 1rem;
+}
+
+.hobby-card .icon {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 8px; 
+}
+
+.hobby-card .icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+footer {
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.footer-grid h5 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.footer-grid ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-grid li a {
+  text-decoration: none;
+  color: #555;
+}
+
+/* PHOTO PAGE STYLES BELOW */
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.photo-card {
+  position: relative;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.carousel {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  transition: transform 0.3s ease;
+}
+
+.carousel img:hover {
+  transform: scale(1.05);
+}
+
+.overlay-text {
+  position: absolute;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.photo-card.top-left .overlay-text {
+  top: 10px;
+  left: 10px;
+}
+
+.photo-card.top-right .overlay-text {
+  top: 10px;
+  right: 10px;
+}
+
+.photo-card.bottom-left .overlay-text {
+  bottom: 10px;
+  left: 10px;
+}
+
+.photo-card.bottom-right .overlay-text {
+  bottom: 10px;
+  right: 10px;
+}
