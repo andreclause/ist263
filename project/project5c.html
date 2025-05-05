@@ -5,6 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Photography | Andre Clause</title>
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+      const carousel = wrapper.querySelector('.carousel');
+      const leftBtn = wrapper.querySelector('.carousel-btn.left');
+      const rightBtn = wrapper.querySelector('.carousel-btn.right');
+  
+      const scrollAmount = carousel.offsetWidth; // scroll by one full view
+  
+      leftBtn.addEventListener('click', () => {
+        carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      });
+  
+      rightBtn.addEventListener('click', () => {
+        carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      });
+    });
+  </script>
 </head>
 <body>
 
@@ -17,7 +34,7 @@
 
   <section class="section">
     <h1>Photography</h1>
-    <p>Click through each set to explore different aspects of my photography work.</p>
+    <p>Swipe through each set to explore different aspects of my photography work.</p>
 
     <div class="photo-grid">
       <!-- California Set -->
