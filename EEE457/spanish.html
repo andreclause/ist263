@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orla • Learn Spanish</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', Arial, sans-serif;
+      background-color: #ffffff;
+      color: #002244;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 40px;
+      background-color: #0b1f3a;
+      color: white;
+      align-items: center;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 40px;
+      gap: 40px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 42px;
+      margin: 0;
+      line-height: 1.3;
+    }
+    h1 span {
+      color: #3fb3a3;
+    }
+    p {
+      max-width: 650px;
+      font-size: 20px;
+      line-height: 1.5;
+      color: #334;
+    }
+    .levels-container {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .level-card {
+      width: 260px;
+      padding: 24px;
+      border-radius: 20px;
+      background-color: #eef7ff;
+      text-align: left;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+    .level-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    .level-title {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .btn-back {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="btn-back" onclick="window.location.href='index.html'">← Back</button>
+    <div class="logo">orla</div>
+  </header>
+
+  <div class="content">
+    <h1>Let's learn <span>Spanish</span> 🇪🇸</h1>
+    <p>Choose your starting level so we can personalize your learning experience. Orla adapts to your pace — whether you know a few words or you're ready for full conversations.</p>
+
+    <div class="levels-container">
+      <div class="level-card" onclick="alert('Beginner selected')">
+        <div class="level-title">Beginner</div>
+        <p>Start from zero. Learn pronunciation, phrases, and essential vocabulary.</p>
+      </div>
+
+      <div class="level-card" onclick="alert('Intermediate selected')">
+        <div class="level-title">Intermediate</div>
+        <p>Expand vocabulary, build sentence structure, and start real conversations.</p>
+      </div>
+
+      <div class="level-card" onclick="alert('Advanced selected')">
+        <div class="level-title">Advanced</div>
+        <p>Work toward fluency with complex grammar and expression.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
